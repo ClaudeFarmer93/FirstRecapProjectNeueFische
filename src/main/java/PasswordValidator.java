@@ -1,4 +1,10 @@
+import java.util.Arrays;
+import java.util.List;
+
 public final class PasswordValidator {
+
+    public static final List<String> commonPasswords = List.of("password", "12345678", "Password1", "QWERTZ123");
+
 
     public static boolean hasMinLength(String password, int min) {
         if(password == null) {
@@ -43,12 +49,14 @@ public final class PasswordValidator {
         if(password == null) {
             return false;
         }
-        String[] commonPasswords = {"password", "12345678", "Password1", "QWERTZ123"};
-        for(String commonPassword : commonPasswords) {
-            if(password.toLowerCase().equals(commonPassword.toLowerCase())) {
-                return true;
-            }
+        if(commonPasswords.contains(password)) {
+            return true;
         }
+//        for(String commonPassword : commonPasswords) {
+//            if(password.toLowerCase().equals(commonPassword.toLowerCase())) {
+//                return true;
+//            }
+//        }
         return false;
     }
 //

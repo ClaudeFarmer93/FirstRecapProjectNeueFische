@@ -94,4 +94,9 @@ public class PasswordValidatorTest {
         boolean actual = PasswordValidator.isCommonPassword(password);
         assertEquals(expected, actual);
     }
+    @Test
+    void isCommonPassword_shouldReturnTrue_whenCommonPasswordIsEmpty(){
+        String password = "Password1";
+        assertTrue(PasswordValidator.isCommonPassword(password));
+    }
 }
