@@ -46,10 +46,10 @@ public final class PasswordValidator {
         String[] commonPasswords = {"password", "12345678", "Password1", "QWERTZ123"};
         for(String commonPassword : commonPasswords) {
             if(password.toLowerCase().equals(commonPassword.toLowerCase())) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 //
 //
