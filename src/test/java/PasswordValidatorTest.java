@@ -32,4 +32,19 @@ public class PasswordValidatorTest {
         boolean actual = PasswordValidator.hasMinLength(null,8);
         assertEquals(expected, actual);
     }
+
+    @Test
+    void containsDigit_shouldReturnTrue_whenPasswordContainsDigit(){
+        String password = "qwertzu1";
+        boolean expected = true;
+        boolean actual = PasswordValidator.containsDigit(password);
+        assertEquals(expected, actual);
+    }
+    @Test
+    void containsDigit_shouldReturnFalse_WhenPasswordContainsNoDigit(){
+        String password = "qwertzue";
+        boolean expected = false;
+        boolean actual = PasswordValidator.containsDigit(password);
+        assertEquals(expected, actual);
+    }
 }
