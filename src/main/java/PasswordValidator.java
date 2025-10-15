@@ -18,7 +18,27 @@ public final class PasswordValidator {
         }
         return false;
    }
-//    public static boolean containsUpperAndLowerCase(String password);
+    public static boolean containsUpperAndLowerCase(String password){
+        boolean hasLowerCase = false;
+        boolean hasUpperCase = false;
+        if(password == null) {
+            return false;
+        }
+        char[] chars = password.toCharArray();
+        for(char c : chars) {
+            if(Character.isLowerCase(c)) {
+                hasLowerCase = true;
+            }
+            if(Character.isUpperCase(c)){
+                hasUpperCase = true;
+            }
+            if(hasLowerCase && hasUpperCase) {
+                return true;
+            }
+
+        }
+        return false;
+    }
 //    public static boolean isCommonPassword(String password);
 //
 //
