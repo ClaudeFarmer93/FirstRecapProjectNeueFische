@@ -57,6 +57,7 @@ public class PasswordValidatorTest {
         String password = "q3er3t4u";
         assertTrue(PasswordValidator.containsDigit(password));
     }
+
     @Test
     void containsUpperAndLowerCase_shouldReturnTrue_whenUpperAndLowerCase(){
         String password = "QWerweT";
@@ -77,5 +78,13 @@ public class PasswordValidatorTest {
     void containsLowerAndUpperCase_shouldReturnFalse_whenOnlyOneChar(){
         String password = "p";
         assertFalse(PasswordValidator.containsUpperAndLowerCase(password));
+    }
+
+    @Test
+    void isCommonPassword_shouldReturnTrue_whenCommonPassword(){
+        String password = "password";
+        boolean expected = false;
+        boolean actual = PasswordValidator.isCommonPassword(password);
+        assertEquals(expected, actual);
     }
 }

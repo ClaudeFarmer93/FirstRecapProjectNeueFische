@@ -39,7 +39,18 @@ public final class PasswordValidator {
         }
         return false;
     }
-//    public static boolean isCommonPassword(String password);
+    public static boolean isCommonPassword(String password){
+        if(password == null) {
+            return false;
+        }
+        String[] commonPasswords = {"password", "12345678", "Password1", "QWERTZ123"};
+        for(String commonPassword : commonPasswords) {
+            if(password.equals(commonPassword)) {
+                return false;
+            }
+        }
+        return true;
+    }
 //
 //
 //    //Bonus
