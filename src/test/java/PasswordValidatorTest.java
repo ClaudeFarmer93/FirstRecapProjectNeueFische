@@ -61,7 +61,7 @@ public class PasswordValidatorTest {
     @Test
     void containsUpperAndLowerCase_shouldReturnTrue_whenUpperAndLowerCase(){
         String password = "QWerweT";
-        boolean expected = true;
+//        boolean expected = true;
         assertTrue(PasswordValidator.containsUpperAndLowerCase(password));
     }
     @Test
