@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 import java.util.List;
 import java.util.Locale;
 
@@ -77,11 +77,8 @@ public final class PasswordValidator {
         if(!containsUpperAndLowerCase(password)) {
             return false;
         }
-        if(isCommonPassword(password)) {
-            return false;
-        }
-        return true;
+        return !isCommonPassword(password);
 
-    };
+    }
 }
 
