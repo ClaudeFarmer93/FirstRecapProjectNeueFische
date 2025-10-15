@@ -47,4 +47,9 @@ public class PasswordValidatorTest {
         boolean actual = PasswordValidator.containsDigit(password);
         assertEquals(expected, actual);
     }
+    @Test
+    void containsDigit_shouldReturnTrue_WhenPasswordIsAllDigits(){
+        String password = "12345678";
+        assertTrue(PasswordValidator.containsDigit(password));
+    }
 }
