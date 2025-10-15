@@ -26,4 +26,10 @@ public class PasswordValidatorTest {
         boolean actual = PasswordValidator.hasMinLength(password,8);
         assertEquals(expected, actual);
     }
+    @Test
+    void hasMinLength_shouldReturnFalse_WhenPasswordIsNull(){
+        boolean expected = false;
+        boolean actual = PasswordValidator.hasMinLength(null,8);
+        assertEquals(expected, actual);
+    }
 }
