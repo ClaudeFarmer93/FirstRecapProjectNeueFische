@@ -12,4 +12,18 @@ public class PasswordValidatorTest {
         assertEquals(expected, actual);
 
     }
+    @Test
+    void hasMinLength_shouldReturnFalse_whenPasswordHasLength7(){
+        String password = "qwertzu";
+        boolean expected = false;
+        boolean actual = PasswordValidator.hasMinLength(password,8);
+        assertEquals(expected, actual);
+    }
+    @Test
+   void hasMinLength_shouldReturnFalse_WhenPasswordIsEmpty(){
+        String password = "";
+        boolean expected = false;
+        boolean actual = PasswordValidator.hasMinLength(password,8);
+        assertEquals(expected, actual);
+    }
 }
