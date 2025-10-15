@@ -112,42 +112,49 @@ public class PasswordValidatorTest {
         String password = "Wfeih110F";
         boolean expected = true;
         boolean actual = PasswordValidator.isValidPassword(password);
+        assertEquals(expected, actual);
     }
     @Test
     void isValidPassword_shouldReturnTrue_whenPasswordSDFocwkg35IsValid(){
         String password = "SDFocwkg35";
         boolean expected = true;
         boolean actual = PasswordValidator.isValidPassword(password);
+        assertEquals(expected, actual);
     }
     @Test
     void isValidPassword_shouldReturnTrue_whenPassword22350GocAIsValid(){
         String password = "22350GocA";
         boolean expected = true;
         boolean actual = PasswordValidator.isValidPassword(password);
+        assertEquals(expected, actual);
     }
     @Test
     void isValidPassword_shouldReturnFalse_whenPasswordWFWEI56FIsInvalid(){
         String password = "WFWEI56F";
         boolean expected = false;
         boolean actual = PasswordValidator.isValidPassword(password);
+        assertEquals(expected, actual);
     }
     @Test
     void isValidPassword_shouldReturnFalse_whenPasswordIsdojweih30Invalid(){
         String password = "dojweih30";
         boolean expected = false;
         boolean actual = PasswordValidator.isValidPassword(password);
+        assertEquals(expected, actual);
     }
     @Test
     void isValidPassword_shouldReturnFalse_whenPasswordIs1233560Invalid(){
         String password = "1233560";
         boolean expected = false;
         boolean actual = PasswordValidator.isValidPassword(password);
+        assertEquals(expected, actual);
     }
     @Test
     void isValidPassword_shouldReturnFalse_whenPassword_IsInvalid(){
         String password = "";
         boolean expected = false;
         boolean actual = PasswordValidator.isValidPassword(password);
+        assertEquals(expected, actual);
     }
 
 }
