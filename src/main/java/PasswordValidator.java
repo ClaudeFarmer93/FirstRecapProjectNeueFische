@@ -1,11 +1,8 @@
 public final class PasswordValidator {
 
     public static boolean hasMinLength(String password, int min) {
-        if (password.length() < min) {
-            return false;
-        }
-        return true;
-    };
+        return password.length() >= min;
+    }
 //    public static boolean containsDigit(String password);
 //    public static boolean containsUpperAndLowerCase(String password);
 //    public static boolean isCommonPassword(String password);
