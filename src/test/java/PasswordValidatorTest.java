@@ -52,4 +52,9 @@ public class PasswordValidatorTest {
         String password = "12345678";
         assertTrue(PasswordValidator.containsDigit(password));
     }
+    @Test
+    void containsDigit_shouldReturnTure_WhenPasswordMoreDigits(){
+        String password = "q3er3t4u";
+        assertTrue(PasswordValidator.containsDigit(password));
+    }
 }
