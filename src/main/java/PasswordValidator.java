@@ -1,9 +1,10 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public final class PasswordValidator {
 
-    public static final List<String> commonPasswords = List.of("password", "12345678", "Password1", "QWERTZ123");
+    public static final List<String> commonPasswords = List.of("password", "12345678", "password1", "qwertz123", "asdf1234");
 
 
     public static boolean hasMinLength(String password, int min) {
@@ -49,20 +50,38 @@ public final class PasswordValidator {
         if(password == null) {
             return false;
         }
-        if(commonPasswords.contains(password)) {
-            return true;
-        }
-//        for(String commonPassword : commonPasswords) {
-//            if(password.toLowerCase().equals(commonPassword.toLowerCase())) {
-//                return true;
-//            }
+//        if(commonPasswords.contains(password)) {
+//            return true;
 //        }
+        String normalisedPassword = password.trim().toLowerCase(Locale.ROOT);
+      for(String common : commonPasswords) {
+          if(normalisedPassword.equals(common)) {
+              return true;
+          }
+           }
+
         return false;
     }
 //
 //
 //    //Bonus
 //    public static boolean containsSpecialChar(String passowrd, String allowed);
-//
-//    public static boolean isValidPassword(String password);
+
+    public static boolean isValidPassword(String password){
+        if(!hasMinLength(password, 8)) {
+            return false;
+        }
+        if(!containsDigit(password)) {
+            return false;
+        }
+        if(!containsUpperAndLowerCase(password)) {
+            return false;
+        }
+        if(isCommonPassword(password)) {
+            return false;
+        }
+        return true;
+
+    };
 }
+
